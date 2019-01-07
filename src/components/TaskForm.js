@@ -9,16 +9,29 @@ class TaskForm extends React.Component {
                 taskDescription: ""
         };
 
-//      this is the event binding function
+//this is the event binding function
         this.onAddClicked = this.onAddClicked.bind(this);
         this.onTaskTextFieldUpdated = this.onTaskTextFieldUpdated.bind(this);
     }
 
-    //this function fires when Add button is clicked
+//this function fires when Add button is clicked
     onAddClicked() {
-            alert(this.state.taskDescription);
+
+        const taskToBeAdded = {
+            id: (Math.random() * 100),
+            description: this.state.taskDescription,
+            completed: false
+        };
+
+        this.props.onAddTaskHandler(taskToBeAdded);
+
+// this clears the text box:         
+            this.setState({
+                taskDescription: ""            
+            });
     }
-    //this function fires when text box is changed
+
+//this function fires when text box is changed
     onTaskTextFieldUpdated(event) {
         const description = event.target.value;
 

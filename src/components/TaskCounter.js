@@ -3,7 +3,7 @@ import React from 'react';
 class TaskCounter extends React.Component {
    render(){
        return (
-        <p style={styles.counter}>There are 4 tasks remaining</p>
+        <p style={styles.counter}>There are some tasks remaining...</p>
        );  
    } 
 }
