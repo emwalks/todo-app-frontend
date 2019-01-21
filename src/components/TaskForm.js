@@ -43,10 +43,10 @@ class TaskForm extends React.Component {
    render() {
        return (
             <div className="row" style={styles.form}>
-                <div className="col">
+                <div className="col" style={styles.taskInputCol}>
                     <input type="text" placeholder="You got this!" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} /> 
                 </div>
-                <div className="col">
+                <div className="col" style={styles.addButtonCol}>
                     <button type ="submit" onClick={this.onAddClicked} class="btn btn-warning">Add</button>                 
                 </div>
             </div>
@@ -59,7 +59,14 @@ const styles = {
         paddingTop : "5px",
         paddingBottom: "5px",
         textAlign: "center"
+    },
+    taskInputCol:{
+        textAlign : "right"
+    },
+    addButtonCol:{
+        //textAlign : "left"
     }
+
 };
 
 export default TaskForm

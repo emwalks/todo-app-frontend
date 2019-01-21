@@ -9,8 +9,9 @@ class Header extends React.Component {
 const styles = {
     header: {
         color: "darkblue",
-        textAlign: "center"
-        
+        textAlign: "center",
+        paddingTop: "20px",
+        paddingBottom: "20px"
     }
 }; 
 

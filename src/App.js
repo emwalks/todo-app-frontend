@@ -14,6 +14,8 @@ class App extends Component {
     };
 
     this.addTask = this.addTask.bind(this);
+    this.doneTask = this.doneTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   addTask(task) {
@@ -24,14 +26,31 @@ class App extends Component {
       });
   }
 
+  doneTask(task) {
+    let currentListOfTasks = this.state.tasks;
+    currentListOfTasks.push(task)
+    this.setState({
+    tasks:currentListOfTasks
+      });
+  }
+
+  removeTask(task) {
+    let currentListOfTasks = this.state.tasks;
+    currentListOfTasks.push(task)
+    this.setState({
+    tasks:currentListOfTasks
+      });
+  }
+
   //this gives a default empty array of tasks initially
   //then have a functioin that pushes the task into the array
+
   render() {
     return (
       <div className="container">
       <Header /> 
       <TaskForm onAddTaskHandler = {this.addTask} />
-      <TaskCounter />
+      <TaskCounter numberOfTasks = {this.state.tasks.length}/>
       <TaskList tasks={this.state.tasks} /> 
       </div>
     );
