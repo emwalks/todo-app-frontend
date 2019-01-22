@@ -14,33 +14,28 @@ class App extends Component {
     };
 
     this.addTask = this.addTask.bind(this);
-    this.doneTask = this.doneTask.bind(this);
-    this.removeTask = this.removeTask.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
+    // this.doneTask = this.doneTask.bind(this);
   }
 
   addTask(task) {
     let currentListOfTasks = this.state.tasks;
     currentListOfTasks.push(task)
     this.setState({
-    tasks:currentListOfTasks
-      });
+      tasks: currentListOfTasks
+    });
   }
 
-  doneTask(task) {
-    let currentListOfTasks = this.state.tasks;
-    currentListOfTasks.push(task)
-    this.setState({
-    tasks:currentListOfTasks
-      });
+
+  deleteTask(id) {
+    alert("deleting task in app.js" + id);
   }
 
-  removeTask(task) {
-    let currentListOfTasks = this.state.tasks;
-    currentListOfTasks.push(task)
-    this.setState({
-    tasks:currentListOfTasks
-      });
-  }
+  /* doneTask(task) {
+   
+     });
+ }
+*/
 
   //this gives a default empty array of tasks initially
   //then have a functioin that pushes the task into the array
@@ -48,10 +43,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-      <Header /> 
-      <TaskForm onAddTaskHandler = {this.addTask} />
-      <TaskCounter numberOfTasks = {this.state.tasks.length}/>
-      <TaskList tasks={this.state.tasks} /> 
+        <Header />
+        <TaskForm onAddTaskHandler={this.addTask} />
+        <TaskCounter numberOfTasks={this.state.tasks.length} />
+        <TaskList tasks={this.state.tasks} onDeleteTaskHandler={this.deleteTask} />
       </div>
     );
   }

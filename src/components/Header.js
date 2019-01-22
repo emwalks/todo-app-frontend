@@ -1,9 +1,9 @@
 import React from 'react';
 
 class Header extends React.Component {
-   render(){
+    render() {
         return (<h1 style={styles.header}>Emma's To Do App</h1>);
-   } 
+    }
 }
 
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
         paddingTop: "20px",
         paddingBottom: "20px"
     }
-}; 
+};
 
 //render is a function that takes no parameters and returns the embedded html on screen
 //styles for pieces of code are often put alongside the component in react as a json object
