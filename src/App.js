@@ -35,9 +35,9 @@ class App extends Component {
     });
   }
 
-  doneTask() {
-    
-    alert ("the doneTask function is running");
+  doneTask(completed) {
+
+    alert ("the doneTask function is running. completed status = " + completed);
   
 }
 
