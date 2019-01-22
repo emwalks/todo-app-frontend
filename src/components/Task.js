@@ -26,7 +26,7 @@ class Task extends React.Component {
 
     onDoneClicked() {
 
-        alert("done has been clicked");
+        this.props.onDoneTaskHandler(this.props.taskStatus)
 
         //function to change boolean in app.js of true false and apply strikethrough based on true/false completed boolean
     };

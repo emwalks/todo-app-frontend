@@ -15,7 +15,7 @@ class App extends Component {
 
     this.addTask = this.addTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
-    // this.doneTask = this.doneTask.bind(this);
+    this.doneTask = this.doneTask.bind(this);
   }
 
   addTask(task) {
@@ -31,29 +31,32 @@ class App extends Component {
     let currentListOfTasks = this.state.tasks;
     let updatedListOfTasks = currentListOfTasks.filter(task => task.id != id)
     this.setState({
-      tasks:updatedListOfTasks
+      tasks: updatedListOfTasks
     });
   }
 
-  /* doneTask(task) {
-   
-     });
- }
-*/
+  doneTask() {
+    
+    alert ("the doneTask function is running");
+  
+}
 
-  //this gives a default empty array of tasks initially
-  //then have a functioin that pushes the task into the array
 
-  render() {
-    return (
-      <div className="container">
-        <Header />
-        <TaskForm onAddTaskHandler={this.addTask} />
-        <TaskCounter numberOfTasks={this.state.tasks.length} />
-        <TaskList tasks={this.state.tasks} onDeleteTaskHandler={this.deleteTask} />
-      </div>
-    );
-  }
+//this gives a default empty array of tasks initially
+//then have a functioin that pushes the task into the array
+
+render() {
+  return (
+    <div className="container">
+      <Header />
+      <TaskForm onAddTaskHandler={this.addTask} />
+      <TaskCounter numberOfTasks={this.state.tasks.length} />
+      <TaskList tasks={this.state.tasks}
+        onDeleteTaskHandler={this.deleteTask}
+        onDoneTaskHandler={this.doneTask} />
+    </div>
+  );
+}
 }
 
 export default App;
