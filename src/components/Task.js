@@ -39,10 +39,10 @@ class Task extends React.Component {
                     {this.props.taskDescription}
                 </div>
                 <div className="col">
-                    <button type="button" onClick={this.onDoneClicked} class="btn btn-info">Done</button>
+                    <button type="button" onClick={this.onDoneClicked} className="btn btn-info">Done</button>
                 </div>
                 <div className="col">
-                    <button type="button" onClick={this.onDeleteClicked} class="btn btn-danger">Delete</button>
+                    <button type="button" onClick={this.onDeleteClicked} className="btn btn-danger">Delete</button>
                 </div>
 
             </div>

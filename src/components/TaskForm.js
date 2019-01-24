@@ -47,7 +47,7 @@ class TaskForm extends React.Component {
                     <input type="text" placeholder="You got this!" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} />
                 </div>
                 <div className="col" style={styles.addButtonCol}>
-                    <button type="submit" onClick={this.onAddClicked} class="btn btn-warning">Add</button>
+                    <button type="submit" onClick={this.onAddClicked} className="btn btn-warning">Add</button>
                 </div>
             </div>
         );

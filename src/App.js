@@ -29,7 +29,7 @@ class App extends Component {
 
   deleteTask(id) {
     let currentListOfTasks = this.state.tasks;
-    let updatedListOfTasks = currentListOfTasks.filter(task => task.id != id)
+    let updatedListOfTasks = currentListOfTasks.filter(task => task.id !== id)
     this.setState({
       tasks: updatedListOfTasks
     });
