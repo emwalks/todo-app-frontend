@@ -38,6 +38,9 @@ class App extends Component {
   doneTask(completed) {
 
     alert ("the doneTask function is running. completed status = " + completed);
+
+    //funtion to change completed status boolean to true
+    //change formating based on completed status ? tick icon
   
 }
 
