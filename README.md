@@ -1,3 +1,5 @@
+Welcome to Emma's To Do Application! You can add tasks, mark them as done or delete them altogether!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
