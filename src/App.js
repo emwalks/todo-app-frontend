@@ -35,31 +35,27 @@ class App extends Component {
     });
   }
 
-  doneTask(completed) {
+  doneTask(id) {
+    let currentListOfTasks = this.state.tasks;
+    let taskToMarkAsDone = currentListOfTasks.find(task => task.id == id)
+    taskToMarkAsDone.completed = true
+    this.setState({
+      tasks: currentListOfTasks
+    });
+  }
 
-    alert ("the doneTask function is running. completed status = " + completed);
-
-    //funtion to change completed status boolean to true
-    //change formating based on completed status ? tick icon
-  
-}
-
-
-//this gives a default empty array of tasks initially
-//then have a functioin that pushes the task into the array
-
-render() {
-  return (
-    <div className="container">
-      <Header />
-      <TaskForm onAddTaskHandler={this.addTask} />
-      <TaskCounter numberOfTasks={this.state.tasks.length} />
-      <TaskList tasks={this.state.tasks}
-        onDeleteTaskHandler={this.deleteTask}
-        onDoneTaskHandler={this.doneTask} />
-    </div>
-  );
-}
+  render() {
+    return (
+      <div className="container">
+        <Header />
+        <TaskForm onAddTaskHandler={this.addTask} />
+        <TaskCounter numberOfTasks={this.state.tasks.length} />
+        <TaskList tasks={this.state.tasks}
+          onDeleteTaskHandler={this.deleteTask}
+          onDoneTaskHandler={this.doneTask} />
+      </div>
+    );
+  }
 }
 
 export default App;

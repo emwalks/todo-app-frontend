@@ -25,18 +25,23 @@ class Task extends React.Component {
 
 
     onDoneClicked() {
-
-        this.props.onDoneTaskHandler(this.props.taskStatus)
-
-        //function to change boolean in app.js of true false and apply strikethrough based on true/false completed boolean
+        this.props.onDoneTaskHandler(this.props.taskId);
     };
 
     render() {
+
+        let taskStyle = {};
+        if (this.props.taskStatus) {
+            taskStyle = {
+                textDecoration: "line-through"
+            }
+        }
+
         return (
             <div className="row" style={styles.taskRow}>
 
-                <div className="col">
-                    {this.props.taskDescription}
+                <div className="col" style = {taskStyle}>
+                    {this.props.taskDescription} 
                 </div>
                 <div className="col">
                     <button type="button" onClick={this.onDoneClicked} className="btn btn-info">Done</button>
