@@ -37,6 +37,8 @@ class Task extends React.Component {
             }
         }
 
+        //this is react conditional formatting
+
         return (
             <div className="row" style={styles.taskRow}>
 
