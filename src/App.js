@@ -3,6 +3,7 @@ import Header from './components/Header';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import TaskCounter from './components/TaskCounter';
+import TasksService from './service/tasks';
 
 class App extends Component {
 
@@ -17,6 +18,14 @@ class App extends Component {
     this.deleteTask = this.deleteTask.bind(this);
     this.doneTask = this.doneTask.bind(this);
   }
+
+  async componentDidMount() {
+    const tasks = await TasksService.getTasks();
+    this.setState({tasks: tasks});
+ }
+
+ //this says when the component mounts run this piece of code
+ //sets the tasks into state
 
   addTask(task) {
     let currentListOfTasks = this.state.tasks;
