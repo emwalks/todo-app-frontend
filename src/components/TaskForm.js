@@ -18,9 +18,9 @@ class TaskForm extends React.Component {
     onAddClicked() {
 
         const taskToBeAdded = {
-            id: (Math.random() * 100),
-            description: this.state.taskDescription,
-            completed: false
+            
+            Description: this.state.taskDescription,
+            Completed: false
         };
 
         this.props.onAddTaskHandler(taskToBeAdded);

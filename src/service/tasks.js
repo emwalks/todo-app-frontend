@@ -14,6 +14,21 @@ const TasksService = {
 
     //you could add more functions here e.g. async saveTask()
 
+    async saveTask(task) {
+        let res = await axios.post("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks", task);
+        return res.data;
+    },
+
+    async doneTask(task, TaskId) {
+        let res = await axios.put("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId, task);
+        return res.data;
+    },
+
+    async deleteTask(task, TaskId) {
+        let res = await axios.delete("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId, task);
+        return res.data;
+    }
+
  };
  
  export default TasksService;

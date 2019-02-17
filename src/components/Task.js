@@ -12,7 +12,7 @@ class Task extends React.Component {
 
     onDeleteClicked() {
 
-        this.props.onDeleteTaskHandler(this.props.taskId);
+        this.props.onDeleteTaskHandler(this.props.TaskId);
 
     };
 
@@ -25,7 +25,7 @@ class Task extends React.Component {
 
 
     onDoneClicked() {
-        this.props.onDoneTaskHandler(this.props.taskId);
+        this.props.onDoneTaskHandler(this.props.TaskId);
     };
 
     render() {
@@ -43,7 +43,7 @@ class Task extends React.Component {
             <div className="row" style={styles.taskRow}>
 
                 <div className="col" style = {taskStyle}>
-                    {this.props.taskDescription}
+                   {this.props.TaskId} - {this.props.taskDescription}
                 </div>
                 <div className="col">
                     <button type="button" onClick={this.onDoneClicked} className="btn btn-info">Done</button>

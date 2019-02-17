@@ -25,9 +25,14 @@ class App extends Component {
  }
 
  //this says when the component mounts run this piece of code
- //sets the tasks into state
+ //gets tasks from db and sets the tasks into state
 
-  addTask(task) {
+  async addTask(task) {
+
+    const response = await TasksService.saveTask(task);
+
+    task.TaskId = response.insertId;
+
     let currentListOfTasks = this.state.tasks;
     currentListOfTasks.push(task)
     this.setState({
@@ -36,18 +41,27 @@ class App extends Component {
   }
 
 
-  deleteTask(id) {
+  async deleteTask(id) {
+
+    const response = await TasksService.deleteTask(id);
+
+
     let currentListOfTasks = this.state.tasks;
-    let updatedListOfTasks = currentListOfTasks.filter(task => task.id !== id)
+    let updatedListOfTasks = currentListOfTasks.filter(task => task.TaskId !== id)
     this.setState({
       tasks: updatedListOfTasks
     });
   }
 
-  doneTask(id) {
+  async doneTask(id) {
+
+    const response = await TasksService.doneTask(id);
+    
+
+
     let currentListOfTasks = this.state.tasks;
-    let taskToMarkAsDone = currentListOfTasks.find(task => task.id == id)
-    taskToMarkAsDone.completed = true
+    let taskToMarkAsDone = currentListOfTasks.find(task => task.TaskId === id)
+    taskToMarkAsDone.Completed = true
     this.setState({
       tasks: currentListOfTasks
     });
