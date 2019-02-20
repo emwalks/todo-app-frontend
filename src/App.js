@@ -41,26 +41,26 @@ class App extends Component {
   }
 
 
-  async deleteTask(id) {
+  async deleteTask(TaskId) {
 
-    const response = await TasksService.deleteTask(id);
-
+    const response = await TasksService.deleteTask(TaskId);
+    
 
     let currentListOfTasks = this.state.tasks;
-    let updatedListOfTasks = currentListOfTasks.filter(task => task.TaskId !== id)
+    let updatedListOfTasks = currentListOfTasks.filter(task => task.TaskId !== TaskId)
     this.setState({
       tasks: updatedListOfTasks
     });
   }
 
-  async doneTask(id) {
+  async doneTask(TaskId) {
 
-    const response = await TasksService.doneTask(id);
-    
+    const response = await TasksService.doneTask(TaskId);
+  
 
 
     let currentListOfTasks = this.state.tasks;
-    let taskToMarkAsDone = currentListOfTasks.find(task => task.TaskId === id)
+    let taskToMarkAsDone = currentListOfTasks.find(task => task.TaskId === TaskId)
     taskToMarkAsDone.Completed = true
     this.setState({
       tasks: currentListOfTasks

@@ -19,13 +19,13 @@ const TasksService = {
         return res.data;
     },
 
-    async doneTask(task, TaskId) {
-        let res = await axios.put("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId, task);
+    async doneTask(TaskId) {
+        let res = await axios.put("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId);
         return res.data;
     },
 
-    async deleteTask(task, TaskId) {
-        let res = await axios.delete("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId, task);
+    async deleteTask(TaskId) {
+        let res = await axios.delete("https://sdapbu5yz1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + TaskId);
         return res.data;
     }
 
